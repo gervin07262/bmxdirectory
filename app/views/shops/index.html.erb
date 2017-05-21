@@ -1,0 +1,67 @@
+<% content_for :head_css do %>
+  <%= stylesheet_link_tag 'https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css', media: 'all' %>
+<% end %>
+<% content_for :head_js do %>
+  <%= javascript_include_tag 'https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js' %>
+  <%= javascript_include_tag 'https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js' %>
+<% end %>
+<section class="page-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Tiendas</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 main-content">
+        <div class="item-content">
+          <% if flash[:notice] %>
+            <div class="alert alert-success"><%= flash[:notice] %></div>
+          <% end %>
+          <div class="form-group">
+            <%= link_to new_shop_path, class: 'btn btn-primary' do %>
+              Añadir <i class="fa fa-plus"></i>
+            <% end %>
+          </div>
+          <table id="example" class="display table-border" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @shops.each do |shop| %>
+                  <tr>
+                      <td><%= shop.name %></td>
+                      <td><%= shop.address %></td>
+                      <td>
+                        <a class="btn btn-sm">
+                          <i class="fa fa-check-square-o"></i> Aprobar
+                        </a>
+                        <%= link_to edit_shop_path(shop), class: 'btn btn-sm' do %>
+                          <i class="fa fa-edit"></i>  Editar
+                        <% end %>
+                        <a class="btn btn-sm">
+                          <i class="fa fa-trash-o"></i> Borrar
+                        </a>
+                      </td>
+                  </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+  });
+</script>

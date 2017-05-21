@@ -1,0 +1,13 @@
+<div class="col-md-3 sidebar-right">
+  <div class="item-sidebar">
+    <h2 id="title">Próximos Eventos</h2>
+    <% @events.each do |event| %>
+      <div class="event">
+        <h2><%= event.title %></h2>
+        <div class="event-meta">
+          <p><i class="fa fa-calendar"></i> <%= event.date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

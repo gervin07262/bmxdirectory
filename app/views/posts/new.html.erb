@@ -1,0 +1,23 @@
+<% content_for :head_js do %>
+  <%= javascript_include_tag '//cloud.tinymce.com/stable/tinymce.min.js' %>
+<% end %>
+<section class="page-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Noticias / Nuevo</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 main-content">
+        <div class="item-content">
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

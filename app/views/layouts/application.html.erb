@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>Bmx Directory</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application'%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= yield :head_css %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%= yield :head_js %>
+  </head>
+  <body>
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Login</h4>
+          </div>
+          <div class="modal-body">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+               <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+              </div>
+
+               <div class="form-group">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+              </div>
+
+              <% if devise_mapping.rememberable? -%>
+                 <div class="form-group">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+
+              <div class="actions">
+                <%= f.submit "Log in", class: 'btn btn-primary' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Registro</h4>
+          </div>
+          <div class="modal-body">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up", class: 'btn btn-primary' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><%= image_tag("logo.png", size: "100", class: "img-responsive") %></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+              <li class="active"><%= link_to 'Inicio', '/' %></li>
+              <li><%= link_to 'Noticias', noticias_path %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Información Útil <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Tiendas', tiendas_path %></li>
+            
+                </ul>
+              </li>
+              <% if user_signed_in? %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User 1<span class="caret"></span></a>
+                  <ul class="dropdown-menu login">
+                      <li><a><i class="fa fa-user"></i> Mi perfil</a></li>
+                      <% if current_user.has_role? :admin %>
+                        <li>
+                          <%= link_to circuits_path do %>
+                            <i class="fa fa-bicycle"></i> Circuitos
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to shops_path do %>
+                            <i class="fa fa-bicycle"></i> Tiendas
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to posts_path do %>
+                            <i class="fa fa fa-newspaper-o"></i> Noticias
+                          <% end %>
+                        </li>
+                      <% else %>
+                        <li>
+                          <%= link_to new_circuit_path do %>
+                            <i class="fa fa-bicycle"></i> Añadir Circuito
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to new_shop_path do %>
+                            <i class="fa fa-bicycle"></i> Añadir Tienda
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to new_post_path do %>
+                            <i class="fa fa-newspaper-o"></i> Añadir Noticia
+                          <% end %>
+                        </li>
+                      <% end %>
+                      <li>
+                        <%= link_to destroy_user_session_path, method: 'DELETE' do %>
+                          <i class="fa fa-power-off"></i> Logout
+                        <% end %>
+                      </li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><a data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i> Login</a></li>
+                <li id="nav-register"><a data-toggle="modal" data-target="#registerModal">/ Registro</a></li>
+              <% end %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+    </header>
+    <%= yield %>
+    <%= yield :page_js %>
+    <footer>
+      <p id="copyright">Copyright 2017</p>
+    </footer>
+  </body>
+</html>

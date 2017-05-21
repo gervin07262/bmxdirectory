@@ -1,0 +1,295 @@
+.table-border{border:1px solid #e7e7e7}.table-border thead tr th{border:1px solid #ddd;padding:8px}.table-border tbody tr td{border:1px solid #ddd;padding:8px}@media (max-width: 767px){.main-content{min-height:402px !important}}@media (min-width: 768px){.main-content{min-height:427px !important}}
+/* line 9, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/admin.scss */
+.table-border {
+  border: 1px solid #e7e7e7;
+}
+/* line 13, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/admin.scss */
+.table-border thead tr th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+/* line 21, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/admin.scss */
+.table-border tbody tr td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+@media (max-width: 767px) {
+  /* line 30, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/admin.scss */
+  .main-content {
+    min-height: 402px !important;
+  }
+}
+@media (min-width: 768px) {
+  /* line 36, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/admin.scss */
+  .main-content {
+    min-height: 427px !important;
+  }
+}
+body{background-color:#EDEEF0 !important}.navbar{margin-bottom:0 !important}.new_user .btn-success{width:100%}header{border-bottom:4px solid #e7e7e7}header .top-bar{background:#f6f6f6;height:40px;padding:7px 0 0 0;font-size:16px}header .top-bar .information{float:left}header .top-bar .information i::before{margin:0 10px 0 10px}header .top-bar .social{float:right;padding:5px 0 0 0}header .top-bar .social i::before{margin:0 10px 0 10px}header .navbar-default{border-radius:0;background:#fff;min-height:105px}header .navbar-default .navbar-nav{margin:26px -23px 0 0}header .navbar-default .navbar-nav li a{font-size:16px;font-weight:600;color:#333}header .navbar-default .navbar-nav li a .fa{min-width:21px}header .navbar-default .navbar-nav .active>a{background:none}ul{list-style:none}#map_canvas{position:relative;height:70%}#map_canvas #address{width:84%;margin-top:9px;height:31px}#container-fields-search{margin-top:10px}#container-fields-search .btn-success{width:100%}.page-header{margin:0 !important;background:#000;min-height:50px}.page-header h1{color:#fff}.main-content{background:#EDEEF0;margin:20px 0 20px 0}.item-content{background:#fff;padding:10px}.item-content img{margin:0 0 10px 0}.item-content h2{color:#1a7ab5}.item-content .description{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}.item-content .post-meta{border-bottom:1px solid #e7e7e7;min-height:75px}.item-content .post-meta ul{-webkit-padding-start:0;display:flex;float:left;width:90%}.item-content .post-meta ul li{margin-right:20px}.item-content .post-meta ul li span{color:#049fec}.item-content.col-md-12 .col-md-3{padding-left:0 !important}.item-content.col-md-12 .col-md-9 h2{margin-top:0 !important}.item-content.col-md-12 .post-meta{min-height:30px}.sidebar-right{background:#EDEEF0;margin:0 0 20px 0}.sidebar-right .actions{margin:-10px 0 0 0;padding:10px}.sidebar-right .item-sidebar{background:#fff}.sidebar-right .item-sidebar h2{padding:10px 0 0 10px}.sidebar-right .item-sidebar .event{padding:10px;margin:-25px 0 0 0}.sidebar-right .item-sidebar .event h3{color:#1a7ab5}.sidebar-right .item-sidebar .event .event-meta{border-bottom:1px solid #e7e7e7}footer{clear:both;background:black;color:#fff}footer #copyright{padding:40px 0 10px 0;text-align:center}@media (max-width: 767px){#map_canvas #address{width:72%}.main.sidebar{width:100%}.sidebar{width:100%}article .post-meta{width:60% !important}}@media (min-width: 768px){header .navbar-default .navbar-nav{float:right}header .navbar-default .navbar-nav li .dropdown-menu.login{margin-left:-72px}#container-fields-search form{margin-bottom:-4px}#container-fields-search .post-meta{min-height:10px}}
+/* line 12, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+body {
+  background-color: #EDEEF0 !important;
+}
+
+/* line 16, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+/* line 21, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.new_user .btn-success {
+  width: 100%;
+}
+
+/* line 26, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header {
+  border-bottom: 4px solid #e7e7e7;
+}
+/* line 28, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .top-bar {
+  background: #f6f6f6;
+  height: 40px;
+  padding: 7px 0 0 0;
+  font-size: 16px;
+}
+/* line 33, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .top-bar .information {
+  float: left;
+}
+/* line 35, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .top-bar .information i::before {
+  margin: 0 10px 0 10px;
+}
+/* line 39, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .top-bar .social {
+  float: right;
+  padding: 5px 0 0 0;
+}
+/* line 42, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .top-bar .social i::before {
+  margin: 0 10px 0 10px;
+}
+/* line 47, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .navbar-default {
+  border-radius: 0;
+  background: #fff;
+  min-height: 105px;
+}
+/* line 51, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .navbar-default .navbar-nav {
+  margin: 26px -23px 0 0;
+}
+/* line 54, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .navbar-default .navbar-nav li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+/* line 58, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .navbar-default .navbar-nav li a .fa {
+  min-width: 21px;
+}
+/* line 63, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+header .navbar-default .navbar-nav .active > a {
+  background: none;
+}
+
+/* line 70, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+ul {
+  list-style: none;
+}
+
+/* line 74, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+#map_canvas {
+  position: relative;
+  height: 70%;
+}
+/* line 77, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+#map_canvas #address {
+  width: 84%;
+  margin-top: 9px;
+  height: 31px;
+}
+
+/* line 84, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+#container-fields-search {
+  margin-top: 10px;
+}
+/* line 86, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+#container-fields-search .btn-success {
+  width: 100%;
+}
+
+/* line 91, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.page-header {
+  margin: 0 !important;
+  background: #000;
+  min-height: 50px;
+}
+/* line 95, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.page-header h1 {
+  color: #fff;
+}
+
+/* line 100, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.main-content {
+  background: #EDEEF0;
+  margin: 20px 0 20px 0;
+}
+
+/* line 105, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content {
+  background: #fff;
+  padding: 10px;
+}
+/* line 108, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content img {
+  margin: 0 0 10px 0;
+}
+/* line 111, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content h2 {
+  color: #1a7ab5;
+}
+/* line 114, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+/* line 121, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content .post-meta {
+  border-bottom: 1px solid #e7e7e7;
+  min-height: 75px;
+}
+/* line 124, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content .post-meta ul {
+  -webkit-padding-start: 0;
+  display: flex;
+  float: left;
+  width: 90%;
+}
+/* line 129, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content .post-meta ul li {
+  margin-right: 20px;
+}
+/* line 131, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content .post-meta ul li span {
+  color: #049fec;
+}
+
+/* line 140, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content.col-md-12 .col-md-3 {
+  padding-left: 0 !important;
+}
+/* line 144, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content.col-md-12 .col-md-9 h2 {
+  margin-top: 0 !important;
+}
+/* line 148, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.item-content.col-md-12 .post-meta {
+  min-height: 30px;
+}
+
+/* line 153, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.sidebar-right {
+  background: #EDEEF0;
+  margin: 0 0 20px 0;
+}
+/* line 156, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.sidebar-right .actions {
+  margin: -10px 0 0 0;
+  padding: 10px;
+}
+/* line 160, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.sidebar-right .item-sidebar {
+  background: #fff;
+}
+/* line 162, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.sidebar-right .item-sidebar h2 {
+  padding: 10px 0 0 10px;
+}
+/* line 165, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.sidebar-right .item-sidebar .event {
+  padding: 10px;
+  margin: -25px 0 0 0;
+}
+/* line 168, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.sidebar-right .item-sidebar .event h3 {
+  color: #1a7ab5;
+}
+/* line 171, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+.sidebar-right .item-sidebar .event .event-meta {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+/* line 178, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+footer {
+  clear: both;
+  background: black;
+  color: #fff;
+}
+/* line 182, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+footer #copyright {
+  padding: 40px 0 10px 0;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  /* line 190, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  #map_canvas #address {
+    width: 72%;
+  }
+
+  /* line 194, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  .main.sidebar {
+    width: 100%;
+  }
+
+  /* line 197, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  .sidebar {
+    width: 100%;
+  }
+
+  /* line 201, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  article .post-meta {
+    width: 60% !important;
+  }
+}
+@media (min-width: 768px) {
+  /* line 210, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  header .navbar-default .navbar-nav {
+    float: right;
+  }
+  /* line 213, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  header .navbar-default .navbar-nav li .dropdown-menu.login {
+    margin-left: -72px;
+  }
+
+  /* line 221, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  #container-fields-search form {
+    margin-bottom: -4px;
+  }
+  /* line 224, /home/vinicio/Documentos/Desarrollo Web/Ironhack/Git/Final Project/Branches/Master/bmxdirectory/app/assets/stylesheets/site.scss */
+  #container-fields-search .post-meta {
+    min-height: 10px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

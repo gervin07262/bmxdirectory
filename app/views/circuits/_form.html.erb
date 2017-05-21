@@ -1,0 +1,94 @@
+<% if flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+<%= form_for [@circuit] do |f| %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :name, 'Nombre' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :training_classes, 'Clases de Entrenamiento' %>
+        <%= f.select :training_classes,
+            options_for_select([
+                            ['Si', '1'],
+                            ['No', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :dressing_rooms, 'Vestuario' %>
+        <%= f.select :dressing_rooms,
+            options_for_select([
+                            ['Si', '1'],
+                            ['No', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :state, 'Estado' %>
+        <%= f.select :state,
+            options_for_select([
+                            ['Aprobado', '1'],
+                            ['Inactivo', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :web, 'Web' %>
+        <%= f.text_field :web, class: 'form-control', id: 'web' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :price, 'Precio' %>
+        <%= f.text_field :price, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :location_x, 'Latitud' %>
+        <%= f.text_field :location_x, class: 'form-control', id: 'latitude'  %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :location_y, 'Longitud' %>
+        <%= f.text_field :location_y, class: 'form-control', id: 'longitude' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <div id="map_canvas"></div>
+        <%= f.text_field :address, class: 'form-control', id: 'address' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.button :Guardar, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+<% end %>

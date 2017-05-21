@@ -1,0 +1,61 @@
+<% content_for :head_js do %>
+  <%= javascript_include_tag 'http://maps.google.com/maps/api/js?libraries=places&sensor=false' %>
+<% end %>
+<main class="main">
+  <div class="col-md-5">
+    <div id="map_canvas"></div>
+    <%= text_field_tag 'address', nil, placeholder: 'Direccion...', class: 'form-control' %>
+  </div>
+  <div class="col-md-7">
+    <div id="container-fields-search">
+      <%= form_tag '', method: 'post', :id => 'form-filter-circuits' do  %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= select_tag "dressing_rooms",
+                  options_for_select([
+                                      ['Vestuario', ''],
+                                      ['Si', '1'],
+                                      ['No', '0'],
+                                      ]
+                                    ),
+               multiple: false, class: 'form-control', id: 'dressing_rooms'
+              %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= select_tag "training_classes",
+                  options_for_select([
+                                  ['Clases de Entrenamiento', ''],
+                                  ['Si', '1'],
+                                  ['No', '0'],
+                                  ]
+                                ),
+                  multiple: false, class: 'form-control', id: 'training_classes'
+              %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="row row-fixed">
+        <div class="col-md-12 container-items" id="container-circuits">
+          <% @circuits.each do |circuit| %>
+            <div class="item-content col-md-6">
+                <h2><%= circuit.name %></h2>
+                <p><strong>Vestuario: </strong> <%= (circuit.dressing_rooms == 1) ? 'Si' : 'No' %></p>
+                <p><strong>Precio:</strong> <%= circuit.price %> €</p>
+                <p><strong>Horario:</strong>  L -V 09:00 - 14:00, 17:00 - 21:00; Sábado 09:00 - 15:00 </p>
+                <p><strong>Clases de Entrenamiento:</strong> <%= (circuit.training_classes == 1) ? 'Si' : 'No' %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<% content_for :page_js do %>
+  <%= javascript_include_tag 'maps' %>
+  <%= javascript_include_tag 'circuits' %>
+  <%= javascript_include_tag 'site/index' %>
+<% end %>

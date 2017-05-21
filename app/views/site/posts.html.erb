@@ -1,0 +1,32 @@
+<section class="page-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Noticias</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9 main-content container-items posts">
+        <% @posts.each do |post| %>
+            <article class="item-content col-md-6">
+              <%= image_tag 'http://lorempixel.com/470/200/sports/', class: 'img-responsive', alt: 'Edit Entry' %>
+              <a class="title" href="/noticias/<%= post.id %>"><%= post.title %></a>
+              <p class="description"><%= post.content %></p>
+              <div class="post-meta">
+                <ul>
+                  <li><i class="fa fa-calendar"></i> <%= post.date %></li>
+                  <li><i class="fa fa-user"></i> By <span><%= post.user_id %></span></li>
+                  <li><a href="/noticias/<%= post.id %>" class="btn btn-primary pull-right">Leer Más</a></li>
+                </ul>
+              </div>
+            </article>
+        <% end %>
+      </div>
+      <%= render 'sidebar' %>
+    </div>
+  </div>
+</main>

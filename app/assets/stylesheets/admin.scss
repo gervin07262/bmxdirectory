@@ -1,0 +1,46 @@
+$blue: #1a7ab5;
+$black: #000;
+$white: #fff;
+$light-blue: #049fec;
+$gray: #e7e7e7;
+$body-background: #EDEEF0;
+
+
+
+.table-border {
+  border: 1px solid $gray;
+  thead {
+    tr {
+      th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+#map_canvas {
+  #address {
+    width: 91%;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    min-height: 402px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    min-height: 427px !important;
+  }
+}

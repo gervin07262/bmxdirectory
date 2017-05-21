@@ -1,0 +1,130 @@
+<% if flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+<%= form_for [@shop] do |f| %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :name, 'Nombre' %>
+        <%= f.text_field :name, class: 'form-control', id: 'name' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :web, 'Web' %>
+        <%= f.text_field :web, class: 'form-control', id: 'web' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :horary, 'Horario' %>
+        <%= f.text_field :horary, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :state, 'Estado' %>
+        <%= f.select :state,
+            options_for_select([
+                            ['Aprobado', '1'],
+                            ['Inactivo', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :bicycle_sale, 'Venta de Bicis' %>
+        <%= f.select :bicycle_sale,
+            options_for_select([
+                            ['Si', '1'],
+                            ['No', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :open_sunday_to_sunday, 'Abierto de Domingo a Domingo' %>
+        <%= f.select :open_sunday_to_sunday,
+            options_for_select([
+                            ['Si', '1'],
+                            ['No', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :bicycle_rental, 'Renta de Bicis' %>
+        <%= f.select :bicycle_rental,
+            options_for_select([
+                            ['Si', '1'],
+                            ['No', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :bicycle_repair, 'Reparación de Bicis' %>
+        <%= f.select :bicycle_repair,
+            options_for_select([
+                            ['Si', '1'],
+                            ['No', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.label :description, 'Descripción' %>
+        <%= f.text_area :description, rows: 2, class: 'form-control'  %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <div id="map_canvas"></div>
+        <%= f.text_field :address, class: 'form-control', id: 'address' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :location_x %>
+        <%= f.text_field :location_x, class: 'form-control', id: 'latitude'  %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :location_y %>
+        <%= f.text_field :location_y, class: 'form-control', id: 'longitude' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.button :Guardar, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </diV>
+<% end %>

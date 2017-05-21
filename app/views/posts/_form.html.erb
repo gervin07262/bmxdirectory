@@ -1,0 +1,36 @@
+<% if flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+<%= form_for [@post] do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :title, 'Título' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :state, 'Estado' %>
+        <%= f.select :state,
+            options_for_select([
+                            ['Aprobado', '1'],
+                            ['Inactivo', '0'],
+                            ]
+                          ),
+            {}, {class: 'form-control'}
+        %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content, rows: 50, class: 'form-control'  %>
+      </div>
+    </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <%= f.button :Guardar, class: 'btn btn-primary' %>
+<% end %>

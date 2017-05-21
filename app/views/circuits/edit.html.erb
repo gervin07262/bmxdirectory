@@ -1,0 +1,28 @@
+<% content_for :head_js do %>
+  <%= javascript_include_tag 'http://maps.google.com/maps/api/js?key=AIzaSyCzaltzSwfmKs1IbQA0QLNUVfQ8nSsoekg&libraries=places' %>
+<% end %>
+<section class="page-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Circuitos / Editar</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 main-content">
+        <div>
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<% content_for :page_js do %>
+  <%= javascript_include_tag 'global' %>
+  <%= javascript_include_tag 'maps' %>
+  <%= javascript_include_tag 'circuits/edit' %>
+<% end %>

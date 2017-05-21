@@ -1,0 +1,101 @@
+<% content_for :head_js do %>
+  <%= javascript_include_tag 'http://maps.google.com/maps/api/js?libraries=places&sensor=false' %>
+<% end %>
+<main class="main">
+<div class="col-md-6">
+  <div id="map_canvas"></div>
+  <%= text_field_tag 'address', nil, placeholder: 'Direccion...', class: 'form-control' %>
+</div>
+<div class="col-md-6">
+  <div id="container-fields-search">
+    <%= form_tag '', method: 'post', :id => 'form-filter-circuits' do  %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= select_tag 'bicycle_sale',
+                options_for_select([
+                                    ['Venta de Bicis', ''],
+                                    ['Si', '1'],
+                                    ['No', '0'],
+                                    ]
+                                  ),
+             multiple: false, class: 'form-control', id: 'bicycle_ale'
+            %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= select_tag 'open_sunday_to_sunday',
+                options_for_select([
+                                ['Abierto de Domingo a Domingo', ''],
+                                ['Si', '1'],
+                                ['No', '0'],
+                                ]
+                              ),
+            multiple: false, class: 'form-control', id: 'open_sunday_to_sunday'
+            %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= select_tag 'bicycle_rental',
+                options_for_select([
+                                ['Alquiler de Bicis', ''],
+                                ['Si', '1'],
+                                ['No', '0'],
+                                ]
+                              ),
+                multiple: false, class: 'form-control', id: 'bicycle_rental'
+            %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= select_tag 'bicycle_repair',
+                options_for_select([
+                                ['Reparación de Bicis', ''],
+                                ['Si', '1'],
+                                ['No', '0'],
+                                ]
+                              ),
+                multiple: false, class: 'form-control', id: 'bicycle_repair'
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="row row-fixed">
+      <div class="col-md-12 container-items" id="container-shops">
+        <% @shops.each do |shop| %>
+        	<div class="item-content col-md-6">
+        	  <%= image_tag 'http://lorempixel.com/200/200/sports/', size: '200', alt: 'Edit Entry' %>
+        	  <h2><%= shop.name %></h2>
+        	  <p><%= shop.description %></p>
+        	  <p><strong>Dirección: </strong> <%= shop.address %></p>
+        	  <p><strong>Web:</strong> <%= shop.web %></p>
+            <p><strong>Horario:</strong> <%= shop.horary %></p>
+        	  <p><strong>Venta de Bicis:</strong>
+                <%= (shop.bicycle_sale==1) ? 'Si' : 'No' %>
+            </p>
+            <p><strong>Alquiler de Bicis:</strong>
+                <%= (shop.bicycle_rental==1) ? 'Si' : 'No' %>
+            </p>
+            <p><strong>Reparación de Bicis:</strong>
+                <%= (shop.bicycle_repair==1) ? 'Si' : 'No' %>
+            </p>
+          	<div class="clearfix"></div>
+          	<div class="post-meta"></div>
+        	</div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<% content_for :page_js do %>
+  <%= javascript_include_tag 'maps' %>
+  <%= javascript_include_tag 'shops_functions' %>
+  <%= javascript_include_tag 'site/shops' %>
+<% end %>

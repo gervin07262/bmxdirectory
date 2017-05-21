@@ -1,0 +1,35 @@
+<% content_for :head_js do %>
+  <%= javascript_include_tag '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5181430e0d0a05d5' %>
+<% end %>
+<section class="page-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Noticias</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="main" id="post-detail">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 main-content container-items posts">
+        <article class="item-content">
+          <h2><%= @post.title %></h2>
+          <%= image_tag 'http://lorempixel.com/470/200/sports/', class: 'img-responsive feature' %>
+          <div class="post-meta">
+            <ul>
+              <li><i class="fa fa-calendar"></i> <%= @post.date %></li>
+              <li><i class="fa fa-user"></i> By <span><%= @post.user_id %></span></li>
+            </ul>
+          </div>
+          <div class="clr"></div>
+          <p class="description"><%= @post.content %></p>
+        </article>
+        <div class="item-content">
+          <div class="addthis_sharing_toolbox center-block"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
