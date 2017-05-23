@@ -21,6 +21,13 @@ a:hover {
 
 p {
   color: $light-black;
+  text-align: justify;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff url(asset-path('menu-arrow.png')) no-repeat 96% center !important;
 }
 
 .clr {
@@ -78,6 +85,19 @@ header {
     min-height: 105px;
     .navbar-nav {
       margin: 26px -23px 0 0;
+      .dropdown {
+        .dropdown-toggle::after {
+          content: "";
+          width: 7px;
+          height: 11px;
+          display: inline-block;
+          margin-right: 5px;
+          margin-left: 20px;
+          transform: rotate(90deg);
+          background: url(asset-path('menu-arrow.png')) center center / cover;
+          background-position: center center;
+        }
+      }
       li {
         a {
           font-size: 16px;
@@ -89,11 +109,16 @@ header {
         }
         a:hover {
           box-shadow: rgba(0, 0, 0, 0.0980391) 0px 2px 30px 0px;
-          background: rgb(255, 255, 255);
+          background: none;
         }
       }
       .active > a {
         background: none;
+      }
+      .active {
+        a:hover {
+          background: none;
+        }
       }
       a {
         cursor: pointer;
@@ -205,6 +230,13 @@ ul {
   }
 }
 
+.event {
+  h2 {
+    color: $blue;
+    font-size: 18px;
+  }
+}
+
 article {
   img.feature {
     display: block;
@@ -225,6 +257,7 @@ article {
   }
   .item-sidebar {
     background: $white;
+    border-radius: 3px;
     #title {
       padding: 10px 0 0 10px;
     }
