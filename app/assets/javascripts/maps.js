@@ -51,6 +51,8 @@ function putMarkers(ubications) {
   }
 }
 
+
+
 function searchUbications() {
   // Create the search box and link it to the UI element.
   var input = $('#address')[0];

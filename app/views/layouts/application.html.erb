@@ -6,6 +6,7 @@
     <%= javascript_include_tag 'application'%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Khula:400,700" rel="stylesheet">
     <%= yield :head_css %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= yield :head_js %>
@@ -83,6 +84,7 @@
       </div>
     </div>
     <header>
+      <%= yield :header %>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -161,8 +163,16 @@
     </header>
     <%= yield %>
     <%= yield :page_js %>
-    <footer>
-      <p id="copyright">Copyright 2017</p>
+    <div class="clr"></div>
+    <footer class="nav">
+        <div class="copyright col-xs-6">
+            Copyright 2017
+        </div>
+        <div class="social-media-buttons col-xs-6">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-google"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
     </footer>
   </body>
 </html>
